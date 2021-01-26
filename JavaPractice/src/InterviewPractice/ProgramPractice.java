@@ -1,8 +1,10 @@
 package InterviewPractice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,7 +25,9 @@ public class ProgramPractice
 	  // p.sortHashMapKeys();
 	  // p.findSummationOfArray();
 	   //p.findAverageOfArray();
-	   p.findMin_MaxInArray();
+//	   p.findMin_MaxInArray();
+	  // p.removeDuplicateFromAL();
+	   p.sortHashMapKeys_DNSO_CSO();
    }
    public void countNumberOfDuplicateCharInString(String s)
    {
@@ -196,7 +200,37 @@ public class ProgramPractice
         	}
         }
         System.out.println("Minimum : "+min);
-
+   }
+   public void removeDuplicateFromAL()
+   {
+	   ArrayList<Integer> al=new ArrayList<Integer>
+	             (Arrays.asList(12,34,87,56,98,54,35,66,97,12,34,87,56,98,54,35,66,97));// array to list conversion
+	   System.out.println(al);
+	   LinkedHashSet<Integer> lhs=new LinkedHashSet<Integer>(al);// remove duplicate from list
+	   System.out.println(lhs);
+	   
+	   ArrayList<Integer> al2=new ArrayList<Integer>(lhs);
+	   Collections.sort(al2);// sorting in DNSO
+	   System.out.println(al2);   
+   }
+   public void sortHashMapKeys_DNSO_CSO()
+   {
+	   HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	   hm.put(29,"anju");
+	   hm.put(99,"anju");
+	   hm.put(39,"anju");
+	   hm.put(49,"anju");
+	   hm.put(58,"anju");
+	   hm.put(22,"anju");
+	   hm.put(11,"anju");
+	   Set<Integer> keys = hm.keySet();
+	   ArrayList<Integer> al=new ArrayList<Integer>(keys);
+//         for(Integer a:keys)
+//         {
+//        	 al.add(a);
+//         }
+         Collections.sort(al);
+         System.out.println(al);
    }
    
    
